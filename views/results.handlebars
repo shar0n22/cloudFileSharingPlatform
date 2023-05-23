@@ -1,0 +1,26 @@
+<ul>
+    <li><a href="/search">Search</a></li>
+    <li><a href="/upload">Upload</a></li>
+    <li><a href="/logout">Logout</a></li>
+    
+</ul>
+
+<form action="/search" method="POST">
+    <label for="search">Search</label>
+    <input type="text" name="search" id="search" required>
+    <button type="submit">Search</button>
+</form>
+
+<table>
+    <thead>
+        <th>Document Excerpt</th>
+        <th>Document Id</th>
+    </thead>
+    <tbody>
+        {{#each data}}
+        <tr>
+            <td>{{this.DocumentExcerpt.Text}}</td>
+            <td><a href="{{this.DocumentURI}}">Download File</a></td>
+        </tr>
+        {{/each}}
+</table>
